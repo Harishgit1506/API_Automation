@@ -27,7 +27,7 @@ public class AddPlace {
 				+ "  \"website\": \"http://google.com\",\r\n"
 				+ "  \"language\": \"French-IN\"\r\n"
 				+ "}").when().post("maps/api/place/add/json").then().log().all().assertThat().statusCode(200)
-		          .body("scope",equalTo("APP"));
+		          .body("scope",equalTo("APP")).body("status",equalTo("OK"));
 		}
 
 }
